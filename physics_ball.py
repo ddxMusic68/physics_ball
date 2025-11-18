@@ -99,6 +99,9 @@ def test():
         if ball.y_pos > HEIGHT-ball.radius: # floor bounce
             ball.y_pos = HEIGHT-ball.radius
             ball.bounce_y()
+        if ball.y_pos < ball.radius: # ceiling bounce
+            ball.y_pos = ball.radius
+            ball.bounce_y()
 
         if ball.y_speed == 0 and ball.x_speed != 0: # slows balls down if rubbing against the floor
             ball.friction_x()
